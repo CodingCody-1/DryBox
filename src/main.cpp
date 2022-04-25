@@ -13,7 +13,7 @@ int fan = 0;
 
 void setup() {
   Serial.begin(9600);
-  Serial.println(F("DHTxx test!"));
+  Serial.println("DHTxx test!");
 
   dht.begin();
 
@@ -29,7 +29,7 @@ void loop() {
     digitalWrite(5, HIGH);
     fan = 1;
   }
-  else if (h <= 10){  //humidity less than 10
+  if (h <= 10){  //humidity less than 10
     digitalWrite(5, LOW);
     fan = 0;
   }
@@ -39,10 +39,10 @@ void loop() {
   lcd.print("%");
 
   lcd.setCursor(0,1);
-  if (fan = 1){
+  if (fan = true) {
     lcd.print("Fan: ON");
   }
-  else {
+  if (fan = false) {
     lcd.print("Fan: OFF");
   }
 }
