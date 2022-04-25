@@ -33,6 +33,7 @@ void loop() {
    digitalWrite(5, LOW);
    fan = 0;
   }
+  lcd.clear();
   lcd.setCursor(0,0);
   lcd.print(h);
   lcd.print("%");
